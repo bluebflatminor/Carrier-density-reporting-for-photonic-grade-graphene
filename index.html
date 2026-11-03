@@ -88,43 +88,44 @@
 <main>
 
 <h1>Carrier-density reporting for photonic-grade graphene</h1>
-<p class="byline">A work-in-progress standards proposal, Oct 12, 2026.</p>
+<p class="byline">A work-in-progress standards proposal, Oct 12, 2026. Revised Nov 3, 2026.</p>
 
 <p class="status"><strong>Work in progress.</strong> This is a developing proposal with a supporting evidence annex, compiled with AI assistance and pending a human archive pass. Values, statuses and references may change.</p>
 
 <section class="proposal" aria-labelledby="proposal-heading">
   <h2 id="proposal-heading" style="margin-top:0">The proposal</h2>
-  Extend IEC TS 62607-6-10, or add a companion part, so that graphene films intended for photonic use report:
+  Add a photonic-grade profile, as a companion part or an extension of the IEC TS 62607-6 series (6-10, 6-16, 6-23 and 6-32), so that graphene films intended for photonic use report:
   <ol>
-    <li><strong>Carrier density and mobility separately</strong>, not only sheet resistance.</li>
+    <li><strong>Carrier density and mobility separately</strong>, not only sheet resistance, for pristine graphene on wafer-scale films and device test structures.</li>
     <li><strong>For electrical methods, a measured gate capacitance and the test structure used</strong>, rather than an assumed dielectric constant.</li>
     <li><strong>Interband absorption at the operating wavelength</strong>, with the assumed Fermi velocity stated.</li>
   </ol>
 </section>
 
 <h2>Why it matters</h2>
-<p>At 1550 nm, graphene's interband absorption is Pauli-blocked once its Fermi level exceeds about 0.40 eV, roughly 1.2×10¹³ carriers per cm². Published wafer-scale processes leave residual doping anywhere from near zero to about 2×10¹³ cm⁻², and at least two sit at or across that edge before any gate is applied. Whether a film absorbs at the operating wavelength therefore depends on ordinary process choices: transfer method, resist, passivation.</p>
-<p>Existing standards cover structure (ISO/TS 21356 series) and sheet resistance (IEC TS 62607-6-10). None specifies carrier density, Fermi level, or absorption at the operating wavelength.</p>
+<p>At 1550 nm, graphene's interband absorption is Pauli-blocked once its Fermi level exceeds about 0.40 eV, roughly 1.2×10¹³ carriers per cm². Published wafer-scale processes leave residual doping anywhere from near zero to about 2×10¹³ cm⁻². One unencapsulated process crosses that edge before any gate is applied, and another sits within about 0.03 to 0.11 eV of it. Whether a film absorbs at the operating wavelength therefore depends on ordinary process choices: transfer method, resist, passivation.</p>
+<p>Gated modulators can absorb part of this as a Dirac-voltage offset, at a cost in drive voltage. In one chip-scale study the residual doping averaged 7.3×10¹² cm⁻² with a 32% spread, and 30 of 32 modulators still worked because device design dominated. The case is strongest for devices whose doping is not compensated by a gate, such as passive or non-volatile designs, where published tolerance data is still missing.</p>
+<p>Existing standards cover structure (ISO/TS 21356 series), sheet resistance by THz mapping (IEC TS 62607-6-10), carrier concentration by the FET voltage-shift method for semiconducting 2D materials (IEC TS 62607-6-16), and Hall-bar mobility and sheet resistance for devices larger than 100 µm (IEC TS 62607-6-23, whose title also names carrier density). A gated transfer-length part that names doping (IEC TS 62607-6-32) is in development. As far as the public scopes show, none specifies, for pristine photonic-grade graphene, a measured gate capacitance, a Fermi level, or absorption at the operating wavelength; 6-16 and 6-32 have not yet been read in full.</p>
 
 <figure class="wide">
   <div class="chart-wrap">
-  <svg viewBox="0 0 760 362" role="img" aria-labelledby="chart-title chart-desc">
-    <title id="chart-title">Residual doping varies more than 30 times, and some processes cross the 1550 nm absorption edge</title>
-    <desc id="chart-desc">Carrier density on a log scale from 10 to the 11 to 10 to the 14 per square centimetre for six published wafer-scale graphene processes, with a dashed line at the 1550 nm absorption edge near 1.2 times 10 to the 13.</desc>
+  <svg viewBox="0 0 760 406" role="img" aria-labelledby="chart-title chart-desc">
+    <title id="chart-title">Reported residual doping spans more than an order of magnitude; one unencapsulated process crosses the 1550 nm absorption edge and others sit just below it</title>
+    <desc id="chart-desc">Carrier density on a log scale from 10 to the 11 to 10 to the 14 per square centimetre for seven published graphene processes, with a dashed line at the 1550 nm absorption edge near 1.2 times 10 to the 13.</desc>
     <g stroke="#D5DAD5" stroke-width="1">
-      <line x1="300" x2="300" y1="52" y2="312"/>
-      <line x1="440" x2="440" y1="52" y2="312"/>
-      <line x1="580" x2="580" y1="52" y2="312"/>
-      <line x1="720" x2="720" y1="52" y2="312"/>
+      <line x1="300" x2="300" y1="52" y2="356"/>
+      <line x1="440" x2="440" y1="52" y2="356"/>
+      <line x1="580" x2="580" y1="52" y2="356"/>
+      <line x1="720" x2="720" y1="52" y2="356"/>
     </g>
     <g fill="#56625E" font-size="13" text-anchor="middle">
-      <text x="300" y="332">10¹¹</text>
-      <text x="440" y="332">10¹²</text>
-      <text x="580" y="332">10¹³</text>
-      <text x="720" y="332">10¹⁴</text>
-      <text x="510" y="348" font-size="12">carrier density, cm⁻² (log scale)</text>
+      <text x="300" y="376">10¹¹</text>
+      <text x="440" y="376">10¹²</text>
+      <text x="580" y="376">10¹³</text>
+      <text x="720" y="376">10¹⁴</text>
+      <text x="510" y="392" font-size="12">carrier density, cm⁻² (log scale)</text>
     </g>
-    <line x1="589.5" x2="589.5" y1="36" y2="312" stroke="#8E6513" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <line x1="589.5" x2="589.5" y1="36" y2="356" stroke="#8E6513" stroke-width="1.5" stroke-dasharray="5 4"/>
     <text x="589.5" y="28" fill="#8E6513" font-size="13" text-anchor="middle">1550 nm absorption edge (E_F = 0.40 eV)</text>
     <g font-size="13" fill="#1A2321">
       <text x="0" y="74">Gao 2022, dry transfer, 4-inch</text>
@@ -132,42 +133,46 @@
       <text x="0" y="162">Giambra 2021, hBN-capped, 150 mm</text>
       <text x="0" y="206">Gao 2022, PMMA wet transfer</text>
       <text x="0" y="250">Wu 2023, after 300 mm integration</text>
-      <text x="0" y="294">Murros 2026, unpassivated, HfO₂ stack</text>
+      <text x="0" y="294">Lee 2020 (arXiv), 8 × 1 mm chip</text>
+      <text x="0" y="338">Murros 2026, unencapsulated, ambient</text>
     </g>
     <g stroke="#A9B1AD" stroke-dasharray="2 3" stroke-width="1.5">
-      <line x1="300" x2="397.9" y1="114" y2="114"/>
+      <line x1="300" x2="366.8" y1="114" y2="114"/>
       <line x1="300" x2="420.8" y1="158" y2="158"/>
     </g>
     <g fill="#A9B1AD">
       <circle cx="366.8" cy="70" r="6"><title>Gao 2022 dry transfer: about 3×10¹¹ cm⁻²</title></circle>
-      <circle cx="397.9" cy="114" r="6"><title>Murros 2026 passivated: 0.1 ± 0.4×10¹² cm⁻² (plotted at 5×10¹¹)</title></circle>
+      <circle cx="366.8" cy="114" r="6"><title>Murros 2026 passivated: 0.0 ± 0.3×10¹² cm⁻², consistent with zero (plotted as a bound at 3×10¹¹)</title></circle>
       <circle cx="420.8" cy="158" r="6"><title>Giambra 2021: E_F below 0.1 eV, at most about 7×10¹¹ cm⁻²</title></circle>
       <circle cx="506.8" cy="202" r="6"><title>Gao 2022 PMMA wet transfer: about 3×10¹² cm⁻²</title></circle>
-      <rect x="575.6" y="285" width="41.5" height="10" rx="5"><title>Murros 2026 unpassivated: 9.3 to 18.4×10¹² cm⁻²</title></rect>
+      <rect x="575.6" y="329" width="41.5" height="10" rx="5"><title>Murros 2026 unencapsulated, ambient: 9.3 to 18.4×10¹² cm⁻² (four wafers; resist patterning and ambient contribute)</title></rect>
     </g>
     <rect x="548.9" y="241" width="31.1" height="10" rx="5" fill="#1D6A72"><title>Wu 2023: 6 to 10×10¹² cm⁻² after 300 mm integration</title></rect>
+    <rect x="537.9" y="285" width="39.6" height="10" rx="5" fill="#1D6A72"><title>Lee 2020 (arXiv): mean 7.3×10¹² cm⁻², plotted ±1 SD (5.0 to 9.6×10¹²); mean + 2 SD is about 1.2×10¹³</title></rect>
+    <line x1="560.9" x2="560.9" y1="283" y2="297" stroke="#F6F7F4" stroke-width="2"/>
     <g font-size="13" fill="#56625E">
       <text x="378.8" y="74">~3×10¹¹</text>
-      <text x="409.9" y="118">0.1 ± 0.4×10¹²</text>
+      <text x="378.8" y="118">0.0 ± 0.3×10¹² (≈ 0)</text>
       <text x="432.8" y="162">≤7×10¹¹ (E_F &lt; 0.1 eV)</text>
       <text x="518.8" y="206">~3×10¹²</text>
-      <text x="629.1" y="294">9–18×10¹²</text>
+      <text x="629.1" y="338">9–18×10¹²</text>
     </g>
     <text x="598" y="250" font-size="13" fill="#1A2321">6–10×10¹²</text>
+    <text x="598" y="294" font-size="13" fill="#1A2321">7.3 ± 2.3×10¹² (±1 SD)</text>
   </svg>
   </div>
-  <figcaption>On narrow screens, scroll the chart sideways. Residual doping varies more than 30× across published wafer-scale processes, and some cross the 1550 nm absorption edge. Values come from Raman, Hall and field-effect methods and are compared for scale only. Edge computed from E_F = ħv_F√(πn) with v_F = 10⁶ m/s, thermal broadening ignored. Data: <a href="data/residual_doping.csv">residual_doping.csv</a>.</figcaption>
+  <figcaption>On narrow screens, scroll the chart sideways. Reported residual doping spans more than an order of magnitude across published processes (wafer-scale, except Lee et al., a chip-scale study of a commercial film). One unencapsulated, ambient process crosses the 1550 nm absorption edge. Wu 2023 and Lee 2020 sit just below it, and the upper end of Lee's distribution (mean plus 2 SD, about 1.2×10¹³) reaches it. Values come from Raman, Hall and field-effect methods, so the spread mixes process differences with method differences and is compared for scale only. The passivated Murros point is consistent with zero and is plotted as a bound. Edge computed from E_F = ħv_F√(πn) with v_F = 10⁶ m/s, thermal broadening ignored. Data: <a href="data/residual_doping.csv">residual_doping.csv</a>.</figcaption>
 </figure>
 
 <h2>Kill conditions</h2>
-<p>The proposal is unnecessary if any of these holds. Statuses are as of Oct 2026 and pending archive pass.</p>
+<p>The proposal is unnecessary if any of these holds. Statuses are as of Nov 2026 and pending archive pass.</p>
 <div class="table-wrap wide">
 <table>
   <thead><tr><th scope="col">ID</th><th scope="col">Kill condition</th><th scope="col">Status</th><th scope="col">Who can check</th></tr></thead>
   <tbody>
-    <tr><td class="id">K1</td><td>An existing or in-progress IEC/ISO deliverable already specifies carrier density or Fermi level for graphene films</td><td>Not met in published standards or the ISO/TS 21356-2 scope; in-progress work programmes unknown</td><td>A TC 113 or TC 229 member</td></tr>
-    <tr><td class="id">K2</td><td>Residual-doping spread across realistic processes is small relative to photonic device tolerance</td><td>Not met: Wu 2023 and Murros 2026 sit at or across the 1550 nm edge</td><td>Literature (done); device groups for tolerance</td></tr>
-    <tr><td class="id">K3</td><td>No method can deliver carrier density reproducibly at wafer scale</td><td>Not met: THz carrier-density and mobility mapping and measured-capacitance GFET maps exist</td><td>Literature (done)</td></tr>
+    <tr><td class="id">K1</td><td>An existing or in-progress IEC/ISO deliverable already specifies carrier density or Fermi level for graphene films</td><td>Partly met; the photonic case remains open. IEC TS 62607-6-16:2022 specifies carrier concentration by the FET voltage-shift method (scope: semiconducting 2D materials; one scope text excludes pristine graphene, though graphene appears in an example figure). IEC TS 62607-6-32 (gated TLM covering doping) is in development and overlaps with items 1 and 2; its stage entries are stale. IEC TS 62607-6-23 names carrier density in its title, but its visible contents report only mobility and sheet resistance. None found that specifies, for pristine photonic-grade graphene, measured gate capacitance or operating-wavelength absorption. Whether 6-16 or 6-32 require measured capacitance is unchecked.</td><td>Read 6-16, clause 3.2 of 6-23 and the 6-32 draft; members of IEC TC 113 or ISO TC 229 (the joint working group on measurement and characterization, JWG 2, handles ISO/TS 21356-2)</td></tr>
+    <tr><td class="id">K2</td><td>Residual-doping spread across realistic processes is small relative to photonic device tolerance</td><td>Partly met for gated modulators. Lee et al. measured residual doping of 7.3 ± 2.3×10¹² cm⁻² (SD 32%) across an 8 × 1 mm chip, yet 30 of 32 modulators worked with under 13% spread in efficiency, and their simulations find that device design outweighs lowering the doping. A residual E_F of about 0.2–0.3 eV is likewise absorbed as a larger drive bias (OFC 2026). The upper end of Lee's distribution (mean + 2 SD, about 1.2×10¹³) reaches the 1550 nm edge, as does the unencapsulated Murros 2026 stack; Wu 2023 sits just below it. Not tested for devices whose doping is not gate-compensated.</td><td>Literature (partly done); device groups for tolerance, especially non-gated devices</td></tr>
+    <tr><td class="id">K3</td><td>No method can deliver carrier density reproducibly at wafer scale</td><td>Not met: THz carrier-density and mobility mapping and measured-capacitance GFET maps exist. Murros 2026 finds GFET extraction repeatable but gTLM drifting between sessions.</td><td>Literature (done)</td></tr>
     <tr><td class="id">K4</td><td>No volume buyer needs photonic-grade graphene specifications</td><td>Weak evidence against: 300 mm pilot-line modulators and dedicated fabs; not decisive</td><td>Industry</td></tr>
   </tbody>
 </table>
@@ -176,10 +181,13 @@
 <h2>Standards baseline</h2>
 <div class="table-wrap wide">
 <table>
-  <thead><tr><th scope="col">Standard</th><th scope="col">Status (Oct 2026)</th><th scope="col">Covers</th><th scope="col">Does not cover</th></tr></thead>
+  <thead><tr><th scope="col">Standard</th><th scope="col">Status (Nov 2026)</th><th scope="col">Covers</th><th scope="col">Does not cover</th></tr></thead>
   <tbody>
     <tr><td><a href="https://webstore.iec.ch/publication/28888">IEC TS 62607-6-10:2021</a></td><td>Published (IEC TC 113)</td><td>Sheet resistance mapped by THz time-domain spectroscopy</td><td>Separating carrier density from mobility; ferroelectric-oxide substrates; ~300 µm resolution</td></tr>
-    <tr><td><a href="https://www.iso.org/standard/83449.html">ISO/TS 21356-2</a></td><td>Not yet published; reported in press for 2026</td><td>Coverage, layer number, disorder and stacking by optical microscopy, Raman and TEM</td><td>Doping, though its Raman spectra already contain the G/2D shifts used to estimate it</td></tr>
+    <tr><td><a href="https://connect.snv.ch/en/iec-ts-62607-6-23-2025-ed1">IEC TS 62607-6-23:2025</a></td><td>Published Nov 5, 2025 (IEC TC 113)</td><td>Hall-bar measurement of carrier mobility and sheet resistance on devices larger than 100 µm, made without photolithography; the title also names carrier density, but the visible contents and annexes report only mobility and sheet resistance. Its introduction notes that extracted mobility varies widely with device structure.</td><td>Per the official abstract and free preview: devices smaller than 100 µm, photolithographically defined test structures, measured gate capacitance, operating-wavelength absorption. Clause 3.2 (characteristics measured) not visible in the preview.</td></tr>
+    <tr><td><a href="https://www.scc.ca/en/standardsdb/iec/51942">IEC TS 62607-6-16:2022</a></td><td>Published Nov 2022 (IEC TC 113)</td><td>Carrier concentration from the gate-voltage shift of FET transfer curves, for semiconducting 2D materials; graphene appears in an example figure (plasma doping, 300 nm SiO₂ back gate)</td><td>Pristine graphene, per one scope text (no bandgap); operating-wavelength absorption. Whether measured gate capacitance is required: not checked. Clauses not yet read.</td></tr>
+    <tr><td><a href="https://dps.gov.al/en/project/show/iec:proj:108113">IEC TS 62607-6-32</a></td><td>In development (IEC TC 113); registry stage entries date from 2022, and BSI lists it as under development as of Jul 2025</td><td>Per its title: charge carrier mobility, contact resistance, sheet resistance, doping and hysteresis of 2D materials by the gated transfer length method</td><td>Unknown; scope text not seen</td></tr>
+    <tr><td><a href="https://www.iso.org/standard/83449.html">ISO/TS 21356-2</a></td><td>Not yet published. ISO/DTS at stage 50.00 (final text received) as of Feb 27, 2026 per registry listings, with a parallel FprCEN text</td><td>Coverage, layer number, disorder and stacking by optical microscopy, Raman and TEM</td><td>Doping, though its Raman spectra already contain the G/2D shifts used to estimate it</td></tr>
     <tr><td>ISO/TS 21356-1:2021</td><td>Published</td><td>Structure of graphene from powders and dispersions</td><td>Sheet or device-grade films</td></tr>
     <tr><td>ISO/TS 9651</td><td>Published</td><td>Classification framework for graphene-related materials</td><td>Device integration; photonic properties</td></tr>
   </tbody>
@@ -191,22 +199,26 @@
 <table>
   <thead><tr><th scope="col">Source</th><th scope="col">Method</th><th scope="col">Finding</th></tr></thead>
   <tbody>
-    <tr><td><a href="https://arxiv.org/abs/2602.17135">Murros et al. (VTT, Graphenea), arXiv 2026</a></td><td>GFET and gated-TLM maps, measured gate capacitance, 200 mm</td><td>Passivated: 0.1 ± 0.4×10¹² cm⁻². Same wafer by gTLM: down to −1.2×10¹². Unpassivated HfO₂-containing stack: 9.3–18.4×10¹². Authors state that test structure and analysis method strongly change extracted values.</td></tr>
-    <tr><td><a href="https://doi.org/10.1002/lpor.202200789">Wu et al. (imec, Ghent, Graphenea), Laser Photonics Rev. 2023</a></td><td>Raman correlation after 300 mm integration</td><td>6–10×10¹² cm⁻² p-type; device simulation needed 1×10¹³ cm⁻².</td></tr>
+    <tr><td><a href="https://doi.org/10.1021/acsnano.6c03282">Murros et al. (VTT, Graphenea), ACS Nano 20(37), 2026</a></td><td>GFET and gated-TLM maps, measured gate capacitance, 200 mm</td><td>Passivated wafer: 0.0 ± 0.3×10¹² cm⁻² by GFET maps (−0.2 and 0.0 across two sessions). Same wafer by gTLM: −0.3 and −1.3 (SD 1.4)×10¹² across two sessions. Unencapsulated stack (17 nm Al₂O₃ + 3 nm HfO₂) measured in ambient: 9.3–18.4×10¹², with the authors attributing much of the spread to resist patterning (one versus two layers). Authors state that test structure and analysis method strongly change extracted values and that passivation can hide residue-driven non-uniformity.</td></tr>
+    <tr><td><a href="https://doi.org/10.1002/lpor.202200789">Wu et al. (imec, Ghent, Graphenea), Laser Photonics Rev. 2023</a></td><td>Raman correlation after 300 mm integration</td><td>6–10×10¹² cm⁻² p-type (E_F about 0.29–0.37 eV); device simulation needed 1×10¹³ cm⁻².</td></tr>
     <tr><td><a href="https://doi.org/10.1038/s41467-022-33135-w">Gao et al. (Peking Univ.), Nat. Commun. 2022</a></td><td>Sheet-resistance maps, Raman, Hall bars, 4-inch</td><td>Transfer method alone: ~3×10¹¹ (dry) vs ~3×10¹² cm⁻² (PMMA wet).</td></tr>
     <tr><td><a href="https://doi.org/10.1038/s41598-025-96207-z">Li et al. (AMO, Graphenea, Emberion), Sci. Rep. 2025</a></td><td>GFET Dirac-point statistics, 150 and 200 mm</td><td>Dirac voltages 5.1 ± 0.9 V (150 mm) to near 40 V (200 mm); conversion to cm⁻² ambiguous because gate capacitance is inconsistent in the paper.</td></tr>
     <tr><td><a href="https://doi.org/10.1021/acsnano.0c09758">Giambra et al. (CNIT, IIT, Cambridge), ACS Nano 2021</a></td><td>Raman correlation, 150 mm, hBN capping</td><td>E_F below 100 meV after capping.</td></tr>
-    <tr><td><a href="https://doi.org/10.1364/OE.23.030721">Buron et al. (DTU), Opt. Express 2015</a></td><td>THz conductance spectra</td><td>Carrier density and mobility mapped separately at wafer scale, checked against van der Pauw devices.</td></tr>
+    <tr><td><a href="https://doi.org/10.1364/OE.23.030721">Buron et al. (DTU, Graphenea), Opt. Express 23(24), 2015</a></td><td>THz time-domain spectroscopy, Boltzmann transport analysis</td><td>Non-contact wafer-scale maps of carrier mobility, carrier density, sheet conductance and scattering time, compared with van der Pauw devices on the same wafer.</td></tr>
+    <tr><td><a href="https://www-g.eng.cam.ac.uk/nms/publications/pdf/67%20GHz%20graphene%20electro-absorption%20modulators%20on%20silicon%20with%2080%20Gbs%20C-band%20and%2040%20Gbs%20O-band%20NRZ%20data%20rates.pdf">"67 GHz graphene electro-absorption modulators on silicon with 80 Gb/s C-band and 40 Gb/s O-band NRZ data rates" (Cambridge-hosted PDF; OFC 2026; authors and session to confirm)</a></td><td>Double single-layer graphene electro-absorption modulator on silicon, measured and modelled</td><td>Typical residual E_F of about 0.2–0.3 eV for graphene on SiO₂ (V_Dirac about 15–22 V); the design absorbs it with a larger drive bias.</td></tr>
+    <tr><td><a href="https://arxiv.org/abs/2011.08832">Lee et al. (Columbia, Campinas), arXiv 2011.08832, 2020 (preprint; no journal version located)</a></td><td>GFET Dirac-point statistics on 28 devices over an 8 × 1 mm area, capacitance measured on Hall bar structures (56 nF cm⁻²); 32 electro-absorption modulators</td><td>Residual doping 7.3 ± 2.3×10¹² cm⁻² (SD 32%). 94% yield (30 of 32) at 7 Gb/s; modulation-efficiency SD under 13%. Monte Carlo: device design (high-κ gate) outweighs lowering the doping; residual doping and gate thickness are the most influential parameters on extinction ratio.</td></tr>
+    <tr><td><a href="https://doi.org/10.1088/1361-6528/ad5dbb">Dockx, Nanotechnology 35(39), 395202, 2024</a></td><td>Electrical characterization of wafer-scale graphene devices, contact-first integration, Al₂O₃ ALD encapsulation</td><td>Dirac-point voltage reduced from about +47 V to between −5 and +5 V on 285 nm SiO₂, with mobility maintained. By nominal SiO₂ capacitance that is roughly 3.5×10¹² cm⁻² to near zero (our conversion with an assumed dielectric constant; the paper's own capacitance not checked).</td></tr>
   </tbody>
 </table>
 </div>
 <p class="note">Full annex with verification status per row: <a href="evidence-table.md">evidence-table.md</a>. Reference list and DOI-gate status: <a href="references.csv">references.csv</a>.</p>
 
 <h2>Open items</h2>
-<p>Pending the human archive pass: no doping data was found for graphene on ferroelectric HZO, which is itself relevant to the proposal; the VTT preprint needs checking against its journal version; three DOIs taken from citing papers (Buron, Wu, Yusuf) still need a direct click-through; and ISO/TS 21356-2 publication is not yet confirmed.</p>
+<p>Pending the human archive pass: clause 3.2 of IEC TS 62607-6-23 and the full texts of 6-16 and 6-32 (or the 6-32 committee draft) must be read to confirm whether carrier density or doping are reported quantities and whether a measured gate capacitance is required (K1); the current stage of 6-32 is unknown, and the programmes of the IEC TC 113 and ISO TC 229 groups beyond it are unmapped; a third-party search also listed IEC TS 62607-6-24:2026 and a preliminary work item on Hall resistance (6-37), neither checked; ISO/TS 21356-2 publication is not confirmed beyond the registry listings; no verified doping data was found for graphene on ferroelectric HZO, which is itself relevant to the proposal (a secondary search reported such data, but the primary paper could not be opened); Wu et al.'s 6–10×10¹² cm⁻² figure has not been re-read in the full text, although its DOI and authorship are verified; the reference "Yusuf" in references.csv is not yet identified; the authors and session of the 67 GHz modulator paper need confirming; and device-tolerance data for graphene devices whose doping is not gate-compensated is still missing (three searches found none).</p>
+<p class="note">Checked on Nov 3, 2026: the Murros row follows the ACS Nano version, whose values differ slightly from the arXiv preprint; the Buron and Wu DOIs resolve to the stated papers; Dockx 2024 and Lee et al. were read in the sources linked above; the free preview of IEC TS 62607-6-23 (contents, introduction, annex titles) was read.</p>
 
 <footer>
-  <p><strong>Work in progress.</strong> Compiled with AI assistance; pending human archive pass. Last updated Oct 12, 2026.</p>
+  <p><strong>Work in progress.</strong> Compiled with AI assistance; pending human archive pass. Last updated Nov 3, 2026.</p>
 </footer>
 
 </main>
